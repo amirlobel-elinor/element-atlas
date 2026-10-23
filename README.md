@@ -1,4 +1,4 @@
-# Element Atlas 2.2
+# Element Atlas 2.3
 
 A periodic-table memorization app: choose a quiz, choose your elements, and start.
 
@@ -40,7 +40,7 @@ Development tests and preview-building tools are omitted from this upload packag
 
 ## Study modes and progress
 
-All 14 illustrated quiz tiles remain grouped under Map & memory, Chemistry, and Connections. Explore and Progress remain available. This packaging update does not change the app.
+All 14 illustrated quiz tiles remain grouped under Map & memory, Chemistry, and Connections. Explore and Progress remain available. The visual design now matches the genBio and genChem app family: rounded illustrated tiles, raised buttons, bold headings, and the genChem violet, cyan, and amber palette. The Ea logo, short labels, and choose → configure → play flow are retained. Desktop navigation uses a compact sidebar; smaller screens keep Play, Explore, and Progress at the top.
 
 Progress is saved in your browser. Use **Progress → Backup & reset → Export** before changing devices or clearing browser data. Updating files at the same site address preserves existing version-2 progress.
 
@@ -48,3 +48,9 @@ Progress is saved in your browser. Use **Progress → Backup & reset → Export*
 
 - [Uploading repository files](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository)
 - [Configuring GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+
+## Verification
+
+Question generation, quiz setup, navigation, scoring, replay, progress persistence, self-contained preview, and flat package contents have been checked in Node. A browser engine could not be installed in this environment, so rendered layout, installation, and offline operation still need a browser check.
+
+After uploading, check one quiz, Explore, Progress, light/dark themes, and a phone-size window. Visit online before testing offline.

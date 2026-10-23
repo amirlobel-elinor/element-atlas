@@ -1,4 +1,4 @@
-import {ELEMENTS,BY_Z,FAMILY_NAMES,CONCEPTS,POLYATOMIC,TREND_PAIRS,MODES} from './data.js?v=2.2.0';
+import {ELEMENTS,BY_Z,FAMILY_NAMES,CONCEPTS,POLYATOMIC,TREND_PAIRS,MODES} from './data.js?v=2.3.0';
 export const VERSION=2;
 export const STORAGE_KEY='element-atlas-progress-v2';
 export const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
