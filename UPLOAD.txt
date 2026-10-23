@@ -13,4 +13,4 @@ The three study sites have a compact app-grid switcher near the top right. Hover
 
 The existing analytics tag from your latest shared HTML is preserved. This update does not change Google Analytics stream or destination settings.
 
-Element Atlas now uses a pale orange theme and matching Ea logo/browser/app icons. It includes offline-cache version 2.3.2. Upload every included file together, then close and reopen any already-open Element Atlas tabs.
+Element Atlas keeps its orange Ea logo and main accents, with a neutral page background and pale blue, mint, lavender, pink, yellow, and peach game tiles inspired by periodic-table palettes. Scientific family colors are unchanged. It includes offline-cache version 2.3.3. Upload every included file together, then close and reopen any already-open Element Atlas tabs.

@@ -86,225 +86,128 @@ h1,h2,h3{font-family:inherit;letter-spacing:-.55px}h1{font-size:36px;line-height
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}.mode-button:hover,.mode-button:active,.button:hover,.button:active{transform:none!important}}
 @media print{.app-header,.footer{display:none}.app-main{margin:0;padding:0;max-width:none}.mode-button{break-inside:avoid}.results,.quiz-card,.atlas-card{box-shadow:none}}
 
-/* Element Atlas: pale apricot theme. Scientific family colors and feedback
-   colors remain defined by the original application. */
+/* Orange identity, with a soft periodic-table palette across the game tiles.
+   Element-family cells and correct/incorrect feedback retain their own colors. */
 :root {
-  --bg: #fff6eb;
-  --surface: #fffcf7;
-  --ink: #432f23;
-  --muted: #78604e;
-  --line: #ead2b8;
-  --accent: #934619;
-  --accent-soft: #ffead2;
-  --sidebar: #ffe5c8;
-  --shadow: 0 4px 0 #7b4d2010;
-  --focus: #9b4d1b;
-  --button-bg: #a54d20;
-  --button-edge: #723310;
+  --bg:#fafaf7; --surface:#fffefa; --ink:#36383e; --muted:#656971;
+  --line:#e1e3df; --accent:#934619; --accent-soft:#ffead2;
+  --sidebar:#fff0df; --shadow:0 4px 0 #4245500b;
+  --focus:#9b4d1b; --button-bg:#a54d20; --button-edge:#723310;
+}
+body { background-image:radial-gradient(#535d6810 .8px,transparent .8px); }
+.app-header { box-shadow:3px 0 18px #8d56200b; }
+.brand { color:#4b3526; }
+.brand img { box-shadow:0 4px 0 #895d3326; }
+.nav button { color:#694a33; }
+.nav button > svg { color:#995a2c; }
+.nav button:hover { color:#58361f; background:#ffe3c5; }
+.nav button.active { color:#593319; background:#f8cfa7; border-color:#c78b55; box-shadow:0 4px 0 #dcaf7f; }
+.nav button.active > svg { color:#783e18; }
+.nav button.active:hover { color:#593319; background:#f5c394; }
+.header-tools { border-color:#e5c8a8; }
+.header-tools .icon-button { color:#75451f; background:#fffbf5; border-color:#d5b99a; }
+.header-tools .icon-button:hover { background:#ffe3c5; }
+.header-help { color:#694a33; }
+
+.mode-group,.setup-heading {
+  --tile-ink:#91501f; --tile-wash:#ffe4c7; --tile-edge:#c8915b;
+}
+.mode-group[data-category="chemistry"],.setup-heading[data-category="chemistry"] {
+  --tile-ink:#276878; --tile-wash:#dff1f4; --tile-edge:#8ebdc7;
+}
+.mode-group[data-category="connections"],.setup-heading[data-category="connections"] {
+  --tile-ink:#7a6023; --tile-wash:#fff0c5; --tile-edge:#cfb979;
 }
 
-body {
-  background-image: radial-gradient(#ad744513 .8px, transparent .8px);
+/* One pastel per game, using the familiar peach, blue, green, lavender,
+   yellow, and pink mix of periodic-table charts. */
+.mode-button,.mode-button[data-mode="map"],.mode-button[data-mode="ion"] {
+  --card-bg:#f9d4b7; --card-edge:#c6966f; --art-ink:#633c21;
+}
+.mode-button[data-mode="name"],.mode-button[data-mode="number"],.mode-button[data-mode="group"] {
+  --card-bg:#d5e6f7; --card-edge:#91afcb; --art-ink:#314f70;
+}
+.mode-button[data-mode="spot"],.mode-button[data-mode="period"] {
+  --card-bg:#d7ecdc; --card-edge:#92b79d; --art-ink:#315b43;
+}
+.mode-button[data-mode="family"],.mode-button[data-mode="polyatomic"] {
+  --card-bg:#e5dbf4; --card-edge:#b09cca; --art-ink:#5b4079;
+}
+.mode-button[data-mode="match"] {
+  --card-bg:#f3dce8; --card-edge:#c69fb5; --art-ink:#77445e;
+}
+.mode-button[data-mode="mass"],.mode-button[data-mode="connections"] {
+  --card-bg:#ffedba; --card-edge:#c9b474; --art-ink:#70551f;
+}
+.mode-button[data-mode="valence"],.mode-button[data-mode="trends"] {
+  --card-bg:#d2edf0; --card-edge:#8ebbc1; --art-ink:#285e66;
 }
 
-.app-header {
-  box-shadow: 3px 0 18px #8d56200c;
-}
-
-.brand {
-  color: var(--ink);
-}
-
-.brand img {
-  box-shadow: 0 4px 0 #895d3326;
-}
-
-.nav button {
-  color: #694a33;
-}
-
-.nav button > svg {
-  color: #995a2c;
-}
-
-.nav button:hover {
-  color: #58361f;
-  background: #ffdbb4;
-}
-
-.nav button.active {
-  color: #593319;
-  background: #f6c99d;
-  border-color: #c78b55;
-  box-shadow: 0 4px 0 #d6a571;
-}
-
-.nav button.active > svg {
-  color: #783e18;
-}
-
-.nav button.active:hover {
-  color: #593319;
-  background: #f3bf8d;
-}
-
-.header-tools {
-  border-color: #dbb58c;
-}
-
-.header-tools .icon-button {
-  color: #75451f;
-  background: #fff1df;
-  border-color: #d5ab7e;
-}
-
-.header-tools .icon-button:hover {
-  background: #ffd7ab;
-}
-
-.header-help {
-  color: #694a33;
-}
-
-/* Replace the default violet game accents with soft apricot. The cyan and
-   gold game categories still help distinguish their activities. */
-.mode-group:not([data-category]),
-.mode-group[data-category="memory"],
-.setup-heading:not([data-category]),
-.setup-heading[data-category="memory"] {
-  --tile-ink: #91501f;
-  --tile-wash: #ffe4c7;
-  --tile-edge: #c8915b;
-}
-
-.mode-button {
-  --card-bg: #f7cea9;
-  --card-edge: #d39b6b;
-  --art-ink: #633c21;
-}
-
-.mode-button[data-mode="map"],
-.mode-button[data-mode="number"] {
-  --card-bg: #f4bf91;
-  --card-edge: #c78954;
-  --art-ink: #5d361c;
-}
-
-.mode-button[data-mode="family"],
-.mode-button[data-mode="group"] {
-  --card-bg: #f9d9b4;
-  --card-edge: #d4a878;
-  --art-ink: #65451f;
-}
-
-.segmented button.active {
-  box-shadow: 0 3px 0 #a65a2330;
-}
-
-.big-symbol {
-  box-shadow: 0 4px 0 #a65a2326;
-}
-
-dialog {
-  box-shadow: 0 20px 80px #3e251840;
-}
-
-dialog::backdrop {
-  background: #35251d90;
-}
+.segmented button.active { box-shadow:0 3px 0 #a65a2328; }
+.big-symbol { box-shadow:0 4px 0 #a65a2323; }
+.progress-stats { padding:8px; gap:8px; }
+.progress-stats > div { padding:17px 5px; border-radius:12px; }
+.progress-stats > div + div { border-left:0; }
+.progress-stats > div:nth-child(1) { background:#fff0df; }
+.progress-stats > div:nth-child(2) { background:#e4f1e8; }
+.progress-stats > div:nth-child(3) { background:#e7edf9; }
+.progress-stats > div:nth-child(1) strong { color:#934619; }
+.progress-stats > div:nth-child(2) strong { color:#315b43; }
+.progress-stats > div:nth-child(3) strong { color:#3e5379; }
+dialog { box-shadow:0 20px 80px #2f334240; }
+dialog::backdrop { background:#282c3690; }
 
 :root[data-theme="dark"] {
-  --bg: #211a17;
-  --surface: #2d231d;
-  --ink: #fff2e6;
-  --muted: #d1bba8;
-  --line: #624a39;
-  --accent: #f2b684;
-  --accent-soft: #513522;
-  --sidebar: #2b211b;
-  --shadow: 0 4px 0 #120b0866;
-  --focus: #ffc58f;
-  --button-bg: #a54d20;
-  --button-edge: #6e3013;
+  --bg:#20232a; --surface:#292d35; --ink:#f0f1f2; --muted:#bfc5cf;
+  --line:#515964; --accent:#f2b684; --accent-soft:#513b2b;
+  --sidebar:#2e251f; --shadow:0 4px 0 #11151d66;
+  --focus:#ffc58f; --button-bg:#a54d20; --button-edge:#6e3013;
 }
-
-:root[data-theme="dark"] body {
-  background-image: radial-gradient(#d6a47711 .8px, transparent .8px);
+:root[data-theme="dark"] body { background-image:radial-gradient(#cbd3e211 .8px,transparent .8px); }
+:root[data-theme="dark"] .brand { color:#fff2e6; }
+:root[data-theme="dark"] .nav button,:root[data-theme="dark"] .header-help { color:#e8c9ae; }
+:root[data-theme="dark"] .nav button > svg { color:#e4a874; }
+:root[data-theme="dark"] .nav button:hover { color:#fff1df; background:#493121; }
+:root[data-theme="dark"] .nav button.active { color:#fff1df; background:#694127; border-color:#ac794c; box-shadow:0 4px 0 #180e08; }
+:root[data-theme="dark"] .nav button.active > svg { color:#ffd3aa; }
+:root[data-theme="dark"] .nav button.active:hover { background:#794c2c; }
+:root[data-theme="dark"] .header-tools { border-color:#654a35; }
+:root[data-theme="dark"] .header-tools .icon-button { color:#f3c79d; background:#493222; border-color:#8d684a; }
+:root[data-theme="dark"] .header-tools .icon-button:hover { background:#5b3d26; }
+:root[data-theme="dark"] .mode-group,:root[data-theme="dark"] .setup-heading {
+  --tile-ink:#f3bc8c; --tile-wash:#503723; --tile-edge:#ba885d;
 }
-
-:root[data-theme="dark"] .nav button,
-:root[data-theme="dark"] .header-help {
-  color: #e8c9ae;
+:root[data-theme="dark"] .mode-group[data-category="chemistry"],:root[data-theme="dark"] .setup-heading[data-category="chemistry"] {
+  --tile-ink:#acdfe7; --tile-wash:#2c464f; --tile-edge:#648c99;
 }
-
-:root[data-theme="dark"] .nav button > svg {
-  color: #e4a874;
+:root[data-theme="dark"] .mode-group[data-category="connections"],:root[data-theme="dark"] .setup-heading[data-category="connections"] {
+  --tile-ink:#f4dba0; --tile-wash:#4e432a; --tile-edge:#a28e54;
 }
-
-:root[data-theme="dark"] .nav button:hover {
-  color: #fff1df;
-  background: #493121;
+:root[data-theme="dark"] .mode-button,:root[data-theme="dark"] .mode-button[data-mode="map"],:root[data-theme="dark"] .mode-button[data-mode="ion"] {
+  --card-bg:#65462f; --card-edge:#a97f5d; --art-ink:#ffe4cc;
 }
-
-:root[data-theme="dark"] .nav button.active {
-  color: #fff1df;
-  background: #694127;
-  border-color: #ac794c;
-  box-shadow: 0 4px 0 #180e08;
+:root[data-theme="dark"] .mode-button[data-mode="name"],:root[data-theme="dark"] .mode-button[data-mode="number"],:root[data-theme="dark"] .mode-button[data-mode="group"] {
+  --card-bg:#344f6b; --card-edge:#7494b5; --art-ink:#deefff;
 }
-
-:root[data-theme="dark"] .nav button.active > svg {
-  color: #ffd3aa;
+:root[data-theme="dark"] .mode-button[data-mode="spot"],:root[data-theme="dark"] .mode-button[data-mode="period"] {
+  --card-bg:#365441; --card-edge:#759d82; --art-ink:#dff4e5;
 }
-
-:root[data-theme="dark"] .nav button.active:hover {
-  background: #794c2c;
+:root[data-theme="dark"] .mode-button[data-mode="family"],:root[data-theme="dark"] .mode-button[data-mode="polyatomic"] {
+  --card-bg:#514266; --card-edge:#9682b1; --art-ink:#f0e5ff;
 }
-
-:root[data-theme="dark"] .header-tools {
-  border-color: #654a35;
+:root[data-theme="dark"] .mode-button[data-mode="match"] {
+  --card-bg:#613e50; --card-edge:#b18199; --art-ink:#ffe1f0;
 }
-
-:root[data-theme="dark"] .header-tools .icon-button {
-  color: #f3c79d;
-  background: #493222;
-  border-color: #8d684a;
+:root[data-theme="dark"] .mode-button[data-mode="mass"],:root[data-theme="dark"] .mode-button[data-mode="connections"] {
+  --card-bg:#5e4e2a; --card-edge:#aa955c; --art-ink:#fff0c6;
 }
-
-:root[data-theme="dark"] .header-tools .icon-button:hover {
-  background: #5b3d26;
+:root[data-theme="dark"] .mode-button[data-mode="valence"],:root[data-theme="dark"] .mode-button[data-mode="trends"] {
+  --card-bg:#31545c; --card-edge:#759fa8; --art-ink:#d7f4f7;
 }
-
-:root[data-theme="dark"] .mode-group:not([data-category]),
-:root[data-theme="dark"] .mode-group[data-category="memory"],
-:root[data-theme="dark"] .setup-heading:not([data-category]),
-:root[data-theme="dark"] .setup-heading[data-category="memory"] {
-  --tile-ink: #f3bc8c;
-  --tile-wash: #503723;
-  --tile-edge: #ba885d;
-}
-
-:root[data-theme="dark"] .mode-button:not([data-mode]),
-:root[data-theme="dark"] .mode-button[data-mode="name"] {
-  --card-bg: #805235;
-  --card-edge: #ad7e55;
-  --art-ink: #ffead6;
-}
-
-:root[data-theme="dark"] .mode-button[data-mode="map"],
-:root[data-theme="dark"] .mode-button[data-mode="number"] {
-  --card-bg: #895733;
-  --card-edge: #bd8a5e;
-  --art-ink: #fff2e6;
-}
-
-:root[data-theme="dark"] .mode-button[data-mode="family"],
-:root[data-theme="dark"] .mode-button[data-mode="group"] {
-  --card-bg: #795d3b;
-  --card-edge: #ad8756;
-  --art-ink: #fff0d6;
-}
-
-@media(max-width:950px) {
-  .app-header { box-shadow: 0 3px 12px #8d562014; }
-}
+:root[data-theme="dark"] .progress-stats > div:nth-child(1) { background:#493628; }
+:root[data-theme="dark"] .progress-stats > div:nth-child(2) { background:#2f453b; }
+:root[data-theme="dark"] .progress-stats > div:nth-child(3) { background:#333f57; }
+:root[data-theme="dark"] .progress-stats > div:nth-child(1) strong { color:#f3bc8c; }
+:root[data-theme="dark"] .progress-stats > div:nth-child(2) strong { color:#b5e3c5; }
+:root[data-theme="dark"] .progress-stats > div:nth-child(3) strong { color:#c3d7fa; }
+@media(max-width:950px) { .app-header { box-shadow:0 3px 12px #8d562014; } }
