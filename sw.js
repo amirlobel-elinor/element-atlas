@@ -1,8 +1,8 @@
 /* Change VERSION whenever you release changed app assets. */
-const VERSION='2.3.0';
+const VERSION='2.3.2';
 const PREFIX=`element-atlas-${new URL(self.registration.scope).pathname}-`;
 const CACHE=PREFIX+VERSION;
-const FILES=['./','./index.html','./styles.css?v=2.3.0','./app.js?v=2.3.0','./core.js?v=2.3.0','./data.js?v=2.3.0','./manifest.webmanifest','./logo.svg','./icon-192.png','./icon-512.png','./icon-maskable-512.png','./apple-touch-icon.png'];
+const FILES=['./','./index.html','./styles.css?v=2.3.2','./app.js?v=2.3.2','./core.js?v=2.3.2','./data.js?v=2.3.2','./manifest.webmanifest','./logo.svg','./icon-192.png','./icon-512.png','./icon-maskable-512.png','./apple-touch-icon.png'];
 const URLS=new Set(FILES.map(path=>new URL(path,self.registration.scope).href));
 self.addEventListener('install',event=>{
  event.waitUntil(caches.open(CACHE).then(async cache=>{

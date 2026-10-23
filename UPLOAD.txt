@@ -1,0 +1,16 @@
+Element Atlas — shared site navigation update
+
+Repository: element-atlas
+Website: https://amirlobel-elinor.github.io/element-atlas/
+
+1. Extract this ZIP.
+2. Open the element-atlas repository on GitHub.
+3. Choose Add file > Upload files.
+4. Upload ALL extracted files directly to the repository root (the same place as index.html). Do not upload the ZIP or a folder containing these files.
+5. Commit the changes. After the Pages deployment finishes, reload the site.
+
+The three study sites have a compact app-grid switcher near the top right. Hover, click, or tap to open it. The home icon opens Premed Atlas. The switcher scrolls with the page; Escape or clicking outside closes it. Premed Atlas has no extra navigation menu.
+
+The existing analytics tag from your latest shared HTML is preserved. This update does not change Google Analytics stream or destination settings.
+
+Element Atlas now uses a pale orange theme and matching Ea logo/browser/app icons. It includes offline-cache version 2.3.2. Upload every included file together, then close and reopen any already-open Element Atlas tabs.
